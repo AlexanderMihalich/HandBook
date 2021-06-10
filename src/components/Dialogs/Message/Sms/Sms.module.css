@@ -1,0 +1,17 @@
+
+.dialogs__dialog{
+	width: 100%;
+	display: flex;
+}
+.dialogs__sms{
+	display: inline-block;
+	border-radius: 5px;
+	text-align: right;
+	background-color: #f2f8f5c2;
+	padding: 20px;
+	font-size: 15px;
+	margin: 10px 0px 10px auto;
+	max-width: 500px;
+	word-wrap:break-word;
+	line-height: 20px;
+}

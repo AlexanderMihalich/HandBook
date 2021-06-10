@@ -1,0 +1,59 @@
+.users{
+	width: 76%;
+	padding: 0px 0px 100px 0px;
+}
+.users__title{
+	font-size: 50px;
+	color: #3d3d3d;
+	margin: 30px 0px;
+}
+.user{
+	border-radius: 15px;
+	padding: 15px 40px 15px 20px;
+	width: 100%;
+	display: flex;
+	margin: 20px 0;
+	background-color: #E6EEEA;
+}
+	.user__ava img{
+		width: 100px;
+		height: 100px;
+		object-fit: cover;
+		border-radius: 30%;
+		margin: 0px 30px 0px 0px;
+}
+	.user__items{
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+}
+.user__name{
+	font-size: 30px;
+	margin: 10px 0px 10px 0px;
+}
+.user__text{
+	font-size: 18px;
+	margin: 0px 0px 5px 0px;
+}
+.user__btns{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.user__btn{
+	border-radius: 5px;
+	padding: 10px 35px;
+	min-width: 140px;
+	background-color: hsla(246, 73%, 26%, 0.8);
+	color: #fff;
+	font-size: 17px;
+}
+.user__btn:hover{
+	background-color: hsla(246, 73%, 26%, 0.9);
+}
+.user__btn_red{
+	background-color: hsla(15, 3%, 30%, 0.8);
+}
+.user__btn_red:hover{
+	background-color: hsla(15, 3%, 30%, 0.9);
+}

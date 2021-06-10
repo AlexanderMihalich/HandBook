@@ -1,0 +1,16 @@
+.posts__item{
+	display: flex;
+	align-items: center;
+	margin: 0px 0px 5% 10%;
+}
+.posts__ava img{
+	width: 70px;
+	height: 70px;
+	object-fit: cover;
+	border-radius: 40%;
+	/* background-color: rgb(40, 84, 165); */
+	margin: 0px 20px 0px 0px;
+}
+.posts__text{
+	font-size: 20px;
+}

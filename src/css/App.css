@@ -1,0 +1,30 @@
+.app-wrapper{
+}
+.title{
+	font-size: 30px;
+	margin: 0px 0px 20px 0px;
+}
+._container{
+	max-width: 1240px;
+	margin: 0px auto;
+}
+.wrapper{
+	display: flex;
+}
+.content{
+	width: 100%;
+	
+}
+.content__content{
+	display: flex;
+	justify-content: space-between;
+}
+.textarea{
+	border-radius: 5px;
+	width: 100%;
+	background-color: #E6EEEA;
+	padding: 20px;
+	font-size: 15px;
+}
+
+

@@ -1,0 +1,19 @@
+.content__addpost{
+	margin: 0px auto 0px auto;
+	width: 90%;
+}
+.content__textarea{
+	height: 100px;
+}
+
+.content__btn{
+	border-radius: 5px;
+	margin: 20px 0px 0px auto;
+	padding: 10px 50px;
+	text-transform: uppercase;
+	background-color: hsla(246, 73%, 26%, 0.938);
+	color:#fff;
+	font-size: 16px;
+	display: flex;
+	justify-content: flex-end;
+}

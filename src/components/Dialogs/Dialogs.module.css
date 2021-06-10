@@ -1,0 +1,12 @@
+.dialogs{
+	margin: 20px 0 40px 0px;
+	width: 80%;
+	display: flex;
+}
+.dialogs__dialogItems{
+	flex: 0 0 25%;
+}
+.dialogs__messages{
+	flex: 0 0 75%;
+	padding: 25px 50px;
+}

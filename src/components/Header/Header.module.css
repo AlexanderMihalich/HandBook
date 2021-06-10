@@ -1,0 +1,17 @@
+.header{
+	padding: 0px 30px;
+	background-color: hsla(246, 73%, 26%, 0.938);
+}
+.content{
+	display: flex;
+	height: 60px;
+	align-items: center;
+}
+.header img{
+	width: 45px;
+	margin: 0px 20px 0px 0px;
+}
+.title{
+	color:#fff;
+	font-size: 25px;
+}

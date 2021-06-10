@@ -1,0 +1,22 @@
+.dialogs__dialogItem{
+	border-radius: 10px;
+	padding: 12px 20px;
+	margin: 0px 0px 10px 0px;
+	background-color: #E6EEEA;
+}
+.dialogs__dialogItem a{
+	color:#002B7A;
+	display: flex;
+	align-items: center;
+}
+.dialogs__user{
+	
+}
+.dialog__avatar{
+	width: 60px;
+	height: 60px;
+	object-fit: cover;
+	border-radius: 40%;
+	margin: 0px 20px 0px 0px;
+	
+}

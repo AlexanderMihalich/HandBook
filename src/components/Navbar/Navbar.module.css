@@ -1,0 +1,50 @@
+.nav{
+	border-radius: 10px;
+	background-color: #2854A5;
+	margin: 20px 0px 20px auto;
+	width: 20%;
+	padding: 20px 20px 20px 30px;
+	min-height: 590px;
+}
+.nav ul{}
+.nav a{
+	display: block;
+	padding: 13px 0px;
+	font-size: 25px;
+	color:#fff;
+	cursor: pointer;
+}
+.nav a.active{
+	color:rgba(255, 255, 255, 0.575);
+}
+.nav__settings{
+	margin: 25px 0px 0px 0px;
+}
+.nav__title{
+	font-size: 35px;
+	color:#fff;
+	margin: 50px 0px 20px 0px;
+}
+
+
+.nav__friends{
+	display: flex;
+	justify-content: space-between;
+}
+.nav__friend{
+	display: flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items: center;
+}
+.nav__avatar{
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	border-radius: 40%;
+}
+.nav__name{
+	color:#fff;
+	font-size: 17px;
+	margin: 10px 0px 0px 0px;
+}
