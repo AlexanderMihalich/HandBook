@@ -1,17 +1,17 @@
 import React from 'react'
-import'./Users.css'
+import './Users.css'
 
 const Users = (props) => {
-	
+
 	if (props.usersPage.length === 0) {
-		props.setUsers (
+		props.setUsers(
 			[
-				{id: 1, followed: true, name:'Stiven A.', country:'AOE', city:'Dybai', avatar:'https://debaty.sumy.ua/wp-content/uploads/2019/01/9_main_new.1506602508.jpg',},
-				{id: 2, followed: false, name:'Victor I.', country:'Ukraine', city:'Kiev', avatar:'https://www.soyuz.ru/public/uploads/files/2/7452690/20201216105432aed6fa04c9.jpg',},
-				{id: 3, followed: false, name:'Makar B.', country:'Russian', city:'Sahalin', avatar:'https://www.mirf.ru/wp-content/uploads/2021/03/avatar-scaled-2560.jpg',},
-				{id: 4, followed: true, name:'Irma V.', country:'Belarus', city:'Minsk', avatar:'https://sahiwal.tv/wp-content/uploads/2020/06/af4471294d3829d55ac2bedd3b91f4670206ef7d.png',},
-				{id: 5, followed: true, name:'Sveta K.', country:'Ukraine', city:'Odessa', avatar:'https://cdnimg.rg.ru/i/gallery/3f26d604/3ad23133.jpg',},
-				{id: 6, followed: false, name:'Valera S.', country:'Ukraine', city:'Zhytomyr', avatar:'https://www.mirf.ru/wp-content/uploads/2021/03/mv5bmjixnti1mta0m15bml5banbnxkftztcwnzc3mtuzna._v1_sx1777_cr001777999_al_.jpg',},
+				{ id: 1, followed: true, name: 'Stiven A.', country: 'AOE', city: 'Dybai', avatar: 'https://debaty.sumy.ua/wp-content/uploads/2019/01/9_main_new.1506602508.jpg', },
+				{ id: 2, followed: false, name: 'Victor I.', country: 'Ukraine', city: 'Kiev', avatar: 'https://www.soyuz.ru/public/uploads/files/2/7452690/20201216105432aed6fa04c9.jpg', },
+				{ id: 3, followed: false, name: 'Makar B.', country: 'Russian', city: 'Sahalin', avatar: 'https://www.mirf.ru/wp-content/uploads/2021/03/avatar-scaled-2560.jpg', },
+				{ id: 4, followed: true, name: 'Irma V.', country: 'Belarus', city: 'Minsk', avatar: 'https://sahiwal.tv/wp-content/uploads/2020/06/af4471294d3829d55ac2bedd3b91f4670206ef7d.png', },
+				{ id: 5, followed: true, name: 'Sveta K.', country: 'Ukraine', city: 'Odessa', avatar: 'https://cdnimg.rg.ru/i/gallery/3f26d604/3ad23133.jpg', },
+				{ id: 6, followed: false, name: 'Valera S.', country: 'Ukraine', city: 'Zhytomyr', avatar: 'https://www.mirf.ru/wp-content/uploads/2021/03/mv5bmjixnti1mta0m15bml5banbnxkftztcwnzc3mtuzna._v1_sx1777_cr001777999_al_.jpg', },
 			]
 		)
 	}
@@ -33,13 +33,12 @@ const Users = (props) => {
 							</div>
 							<div className='user__btns'>
 								{u.followed
-								? <button className='user__btn user__btn_red' onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
-								: <button className='user__btn' onClick={() => { props.follow(u.id) }}>Follow</button>
-							}
-							
+									? <button className='user__btn user__btn_red' onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
+									: <button className='user__btn' onClick={() => { props.follow(u.id) }}>Follow</button>
+								}
 							</div>
 						</div>
-					</div>)}	
+					</div>)}
 			</div>
 		</div>
 	)
