@@ -1,15 +1,14 @@
 import React from 'react'
 import './Users.css'
-import * as axios from 'axios';
 import userPhoto from '../../img/user.png'
+import * as axios from 'axios';
 
 const Users = (props) => {
 
 	if (props.usersPage.length === 0) {
-		axios.get('https://social-network.samuraijs.com/api/1.0/users')
-			.then(responce => {
-				props.setUsers(responce.data.items)
-			})
+		axios.get("https://social-network.samuraijs.com/api/1.0/users").then(responce => {
+			props.setUsers(responce.data.items)
+		})
 
 		// props.setUsers(
 		// 	[
@@ -30,6 +29,7 @@ const Users = (props) => {
 				{props.usersPage.map(u =>
 					<div key={u.id} className='user'>
 						<div className='user__ava'>
+							{/* <img src={u.avatar} /> */}
 							<img src={u.photos.small !== null ? u.photos.small : userPhoto} />
 						</div>
 						<div className='user__items'>
