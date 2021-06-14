@@ -5,22 +5,28 @@ import * as axios from 'axios';
 
 const Users = (props) => {
 
-	if (props.usersPage.length === 0) {
-		axios.get("https://social-network.samuraijs.com/api/1.0/users").then(responce => {
-			props.setUsers(responce.data.items)
-		})
+	let pageCount = Math.ceil(props.totalUserCount / props.pageSize)
 
-		// props.setUsers(
-		// 	[
-		// 		{ id: 1, followed: true, name: 'Stiven A.', country: 'AOE', city: 'Dybai', avatar: 'https://debaty.sumy.ua/wp-content/uploads/2019/01/9_main_new.1506602508.jpg', },
-		// 		{ id: 2, followed: false, name: 'Victor I.', country: 'Ukraine', city: 'Kiev', avatar: 'https://www.soyuz.ru/public/uploads/files/2/7452690/20201216105432aed6fa04c9.jpg', },
-		// 		{ id: 3, followed: false, name: 'Makar B.', country: 'Russian', city: 'Sahalin', avatar: 'https://www.mirf.ru/wp-content/uploads/2021/03/avatar-scaled-2560.jpg', },
-		// 		{ id: 4, followed: true, name: 'Irma V.', country: 'Belarus', city: 'Minsk', avatar: 'https://sahiwal.tv/wp-content/uploads/2020/06/af4471294d3829d55ac2bedd3b91f4670206ef7d.png', },
-		// 		{ id: 5, followed: true, name: 'Sveta K.', country: 'Ukraine', city: 'Odessa', avatar: 'https://cdnimg.rg.ru/i/gallery/3f26d604/3ad23133.jpg', },
-		// 		{ id: 6, followed: false, name: 'Valera S.', country: 'Ukraine', city: 'Zhytomyr', avatar: 'https://www.mirf.ru/wp-content/uploads/2021/03/mv5bmjixnti1mta0m15bml5banbnxkftztcwnzc3mtuzna._v1_sx1777_cr001777999_al_.jpg', },
-		// 	]
-		// )
+	let pages = []
+	for (let i = 1; i <= pageCount; i++) {
+		pages.push(i)
 	}
+	// if (props.usersPage.length === 0) {
+	// 	axios.get("https://social-network.samuraijs.com/api/1.0/users").then(responce => {
+	// 		props.setUsers(responce.data.items)
+	// 	})
+
+	// props.setUsers(
+	// 	[
+	// 		{ id: 1, followed: true, name: 'Stiven A.', country: 'AOE', city: 'Dybai', avatar: 'https://debaty.sumy.ua/wp-content/uploads/2019/01/9_main_new.1506602508.jpg', },
+	// 		{ id: 2, followed: false, name: 'Victor I.', country: 'Ukraine', city: 'Kiev', avatar: 'https://www.soyuz.ru/public/uploads/files/2/7452690/20201216105432aed6fa04c9.jpg', },
+	// 		{ id: 3, followed: false, name: 'Makar B.', country: 'Russian', city: 'Sahalin', avatar: 'https://www.mirf.ru/wp-content/uploads/2021/03/avatar-scaled-2560.jpg', },
+	// 		{ id: 4, followed: true, name: 'Irma V.', country: 'Belarus', city: 'Minsk', avatar: 'https://sahiwal.tv/wp-content/uploads/2020/06/af4471294d3829d55ac2bedd3b91f4670206ef7d.png', },
+	// 		{ id: 5, followed: true, name: 'Sveta K.', country: 'Ukraine', city: 'Odessa', avatar: 'https://cdnimg.rg.ru/i/gallery/3f26d604/3ad23133.jpg', },
+	// 		{ id: 6, followed: false, name: 'Valera S.', country: 'Ukraine', city: 'Zhytomyr', avatar: 'https://www.mirf.ru/wp-content/uploads/2021/03/mv5bmjixnti1mta0m15bml5banbnxkftztcwnzc3mtuzna._v1_sx1777_cr001777999_al_.jpg', },
+	// 	]
+	// )
+	// }
 
 	return (
 		<div className='users'>
@@ -46,8 +52,14 @@ const Users = (props) => {
 							</div>
 						</div>
 					</div>)}
+				<ul className="users__pagination pagination">
+					{pages.map(p => {
+						return <li className={props.currentPage === p && "pagination__item active" || "pagination__item"}
+							onClick={() => { props.onPageChanched(p) }}> {p}</li>
+					})}
+				</ul>
 			</div>
-		</div>
+		</div >
 	)
 }
 export default Users
