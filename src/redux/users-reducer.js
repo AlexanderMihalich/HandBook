@@ -1,9 +1,14 @@
 let FOLLOW = 'FOLLOW'
 let UNFOLLOW = 'UNFOLLOW'
 let SET_USERS = 'SET_USERS'
+let SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
+let SET_USERS_TOTAL_COUNT = 'SET_USERS_TOTAL_COUNT'
 
 let initialState = {
-	users: [ ]
+	users: [],
+	pageSize: 5,
+	totalUserCount: 0,
+	currentPage: 2,
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -11,35 +16,38 @@ const usersReducer = (state = initialState, action) => {
 		case FOLLOW:
 			return {
 				...state,
-				users: state.users.map(  u => {
+				users: state.users.map(u => {
 					if (u.id === action.userId) {
-						return {...u, followed: true}
+						return { ...u, followed: true }
 					}
 					return u
 				})
 			}
-			case UNFOLLOW:
-				return {
-					...state,
-				users: state.users.map( u => {
+		case UNFOLLOW:
+			return {
+				...state,
+				users: state.users.map(u => {
 					if (u.id === action.userId) {
-						return {...u, followed: false}
+						return { ...u, followed: false }
 					}
 					return u
 				})
 			}
 		case SET_USERS:
-			return {
-				...state,
-				users: [...state.users, ...action.users]
-			}
+			return { ...state, users: action.users }
+		case SET_CURRENT_PAGE:
+			return { ...state, currentPage: action.currentPag }
+		case SET_USERS_TOTAL_COUNT:
+			return { ...state, totalUserCount: action.count }
 		default:
 			return state
 	}
 }
 
-export const followCreator = (userId) => ({type: FOLLOW, userId})
-export const unfollowCreator = (userId) => ({type: UNFOLLOW, userId})
-export const setUserCreator = (users) => ({type: SET_USERS, users})
+export const followCreator = (userId) => ({ type: FOLLOW, userId })
+export const unfollowCreator = (userId) => ({ type: UNFOLLOW, userId })
+export const setUserCreator = (users) => ({ type: SET_USERS, users })
+export const setCurrentpageCreator = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage })
+export const setUsersTotalCountCreator = (totalUserCount) => ({ type: SET_USERS_TOTAL_COUNT, count: totalUserCount })
 
 export default usersReducer
