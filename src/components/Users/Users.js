@@ -8,7 +8,8 @@ const Users = (props) => {
 	let pageCount = Math.ceil(props.totalUserCount / props.pageSize)
 
 	let pages = []
-	for (let i = 1; i <= pageCount; i++) {
+	// for (let i = 1; i <= pageCount; i++) {
+	for (let i = 1; i <= 11; i++) {
 		pages.push(i)
 	}
 	// if (props.usersPage.length === 0) {
@@ -53,8 +54,8 @@ const Users = (props) => {
 						</div>
 					</div>)}
 				<ul className="users__pagination pagination">
-					{pages.map(p => {
-						return <li className={props.currentPage === p && "pagination__item active" || "pagination__item"}
+					{pages.map((p, index) => {
+						return <li key={index} className={props.currentPage === p && "pagination__item pagination__item_active" || "pagination__item"}
 							onClick={() => { props.onPageChanched(p) }}> {p}</li>
 					})}
 				</ul>

@@ -19,7 +19,7 @@
 	margin:5px;
 	cursor: pointer;
 }
-.pagination__item.active{
+.pagination__item_active{
 	background-color: #fff;
 	font-weight: 700;
 }
