@@ -2,6 +2,7 @@ import React from 'react'
 import './Users.css'
 import userPhoto from '../../img/user.png'
 import * as axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 const Users = (props) => {
 
@@ -37,7 +38,9 @@ const Users = (props) => {
 					<div key={u.id} className='user'>
 						<div className='user__ava'>
 							{/* <img src={u.avatar} /> */}
-							<img src={u.photos.small !== null ? u.photos.small : userPhoto} />
+							<NavLink to={'/profile/' + u.id}>
+								<img src={u.photos.small !== null ? u.photos.small : userPhoto} />
+							</NavLink>
 						</div>
 						<div className='user__items'>
 							<div className='user__item'>
