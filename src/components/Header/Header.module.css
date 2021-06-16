@@ -4,14 +4,27 @@
 }
 .content{
 	display: flex;
+	justify-content: space-between;
 	height: 60px;
+	align-items: center;
+}
+.header__logo{
+	display: flex;
 	align-items: center;
 }
 .header img{
 	width: 45px;
-	margin: 0px 20px 0px 0px;
+	margin: 0px 10px 0px 0px;
 }
-.title{
+.header__title{
 	color:#fff;
 	font-size: 25px;
+}
+.header__login {
+	cursor: pointer;
+	color:#fff;
+	font-size: 20px;
+}
+.header__login a{
+	color:#c2c2c2;
 }

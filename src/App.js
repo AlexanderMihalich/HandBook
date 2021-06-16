@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/App.css';
 import './css/null.css';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import HeaderImage from './components/HeaderImage/HeaderImage';
 import { BrowserRouter, Route } from 'react-router-dom'
 import DialogsContainer from './components/Dialogs/DialogsContainer';
@@ -15,7 +15,7 @@ function App(props) {
 	return (
 		<BrowserRouter>
 			<div className="app-wrapper">
-				<Header />
+				<HeaderContainer />
 				<div className='wrapper'>
 					<div className='content'>
 						<HeaderImage />

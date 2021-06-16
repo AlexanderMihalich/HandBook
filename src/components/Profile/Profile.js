@@ -4,7 +4,6 @@ import style from './Profile.module.css'
 import AddPostContainer from './AddPost/AddPostContainer';
 
 const Profile = (props) => {
-	debugger
 
 	return (
 		<div className={style.profile}>
