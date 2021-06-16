@@ -20,7 +20,7 @@ function App(props) {
 					<div className='content'>
 						<HeaderImage />
 						<div className='content__content _container'>
-							<Route path='/profile'
+							<Route path='/profile/:userId?'
 								render={() => <ProfileContainer />} />
 							<Route path='/dialogs'
 								render={() => <DialogsContainer />} />
