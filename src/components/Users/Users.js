@@ -50,8 +50,34 @@ const Users = (props) => {
 							</div>
 							<div className='user__btns'>
 								{u.followed
-									? <button className='user__btn user__btn_red' onClick={() => { props.unfollow(u.id) }}>Unfollow</button>
-									: <button className='user__btn' onClick={() => { props.follow(u.id) }}>Follow</button>
+									? <button className='user__btn user__btn_red' onClick={() => {
+										axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+											withCredentials: true,
+											headers: {
+												"API-KEY": "7a59137a-7fbd-4e36-b68e-1df03b7458d7"
+											}
+										})
+											.then(responce => {
+												if (responce.data.resultCode === 0) {
+													props.unfollow(u.id)
+												}
+											})
+
+									}}>Unfollow</button>
+									: <button className='user__btn' onClick={() => {
+										axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+											withCredentials: true,
+											headers: {
+												"API-KEY": "7a59137a-7fbd-4e36-b68e-1df03b7458d7"
+											}
+										})
+											.then(responce => {
+												if (responce.data.resultCode === 0) {
+													props.follow(u.id)
+												}
+											})
+
+									}}>Follow</button>
 								}
 							</div>
 						</div>
